@@ -124,7 +124,8 @@ public class Main{
                                                 new Student(3, "Sushant", 90));
         students.stream().filter(std -> std.getMarks() > 80).forEach(student -> System.out.println(student.getName()));
         students.stream().filter(std -> std.getMarks() > 80).forEach(System.out::println);
-
+        List<Student> sortedStudent = students.stream().sorted((st1,st2) -> st2.getMarks().compareTo(st1.getMarks())).collect(Collectors.toList());
+        System.out.println(sortedStudent);
     }
 }
 
